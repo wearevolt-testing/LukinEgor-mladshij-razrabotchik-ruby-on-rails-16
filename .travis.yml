@@ -1,5 +1,17 @@
 language: ruby
+
 rvm:
   - 2.4.0
+
+services:
+  - postgresql
+
+before_script:
+  - bundle install
+  - psql -c 'create database volt_test;' -U postgres
+
 scripts:
+  - rake db:create db:migrate
   - rspec
+
+dist: trusty

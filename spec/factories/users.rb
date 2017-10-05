@@ -1,6 +1,8 @@
 FactoryGirl.define do
   factory :user do
-    nickname Faker::Name.unique.name
+    sequence :nickname do |n|
+      "#{Faker::Name.unique.name}-#{n}"
+    end
     sequence :email do |n|
       "person#{n}@example.com"
     end

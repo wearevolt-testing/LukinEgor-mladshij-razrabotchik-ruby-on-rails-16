@@ -1,10 +1,32 @@
-/* eslint no-console:0 */
-// This file is automatically compiled by Webpack, along with any other files
-// present in this directory. You're encouraged to place your actual application logic in
-// a relevant structure within app/javascript and only use these pack files to reference
-// that code so it'll be compiled.
-//
-// To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
-// layout file, like app/views/layouts/application.html.erb
+import React from 'react'
+import { Provider } from 'react-redux'
+import createHistory from 'history/createBrowserHistory'
+import { render } from 'react-dom'
+import { Router, Route } from 'react-router-dom'
+import { ConnectedRouter } from 'react-router-redux'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import "./application.css"
+import configureStore from './store/store.js'
+import SignIn from './containers/SignIn'
+import SignUp from './containers/SignUp'
+import EditAvatar from './containers/EditAvatar'
 
-console.log('Hello World from Webpacker')
+const history = createHistory()
+const store = configureStore(history)
+
+document.addEventListener('DOMContentLoaded', () => {
+  render(
+    <Provider store={store}>
+      <MuiThemeProvider>
+        <ConnectedRouter history={history}>
+          <div>
+            <Route exact path="/" component={EditAvatar}/>
+            <Route path="/signin" component={SignIn}/>
+            <Route path="/signup" component={SignUp}/>
+          </div>
+        </ConnectedRouter>
+      </MuiThemeProvider>
+    </Provider>,
+    document.body.appendChild(document.createElement('div'))
+  )
+})

@@ -11,9 +11,11 @@
         "useBuiltIns": true
       }
     ],
-    "react"
+    "react",
+    "es2015"
   ],
   "plugins": [
+    "transform-decorators-legacy",
     "syntax-dynamic-import",
     "transform-object-rest-spread",
     [

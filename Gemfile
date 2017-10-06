@@ -61,3 +61,9 @@ gem 'webpacker', '~> 3.0'
 gem 'knock'
 
 gem 'active_model_serializers', '~> 0.10.0'
+
+gem 'carrierwave', '~> 1.0'
+
+gem 'fog-aws'
+
+gem "mini_magick"

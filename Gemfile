@@ -69,3 +69,5 @@ gem 'fog-aws'
 gem 'mini_magick'
 
 gem 'sidekiq'
+
+gem 'figaro'

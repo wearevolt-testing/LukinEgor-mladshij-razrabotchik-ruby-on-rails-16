@@ -3,6 +3,6 @@ class GenerateAndSendReportJob < ApplicationJob
 
   def perform(email, start_date, finish_date)
     report = Report.generate(start_date, finish_date)
-    ReportMailer.statistics(email, report)
+    ReportMailer.statistics(email, report).deliver
   end
 end

@@ -8,7 +8,6 @@ RSpec.describe ReportMailer, type: :mailer do
   it 'renders the headers' do
     expect(mail.subject).to eq('Report done')
     expect(mail.to).to eq([email])
-    expect(mail.from).to eq(['from@example.com'])
   end
 
   it 'renders the body' do

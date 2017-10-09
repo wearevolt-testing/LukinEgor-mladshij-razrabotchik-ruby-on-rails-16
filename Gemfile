@@ -66,4 +66,6 @@ gem 'carrierwave', '~> 1.0'
 
 gem 'fog-aws'
 
-gem "mini_magick"
+gem 'mini_magick'
+
+gem 'sidekiq'

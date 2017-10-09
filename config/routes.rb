@@ -15,6 +15,8 @@ Rails.application.routes.draw do
           get :auth
         end
       end
+
+      post 'reports/by_author'
     end
   end
 end
